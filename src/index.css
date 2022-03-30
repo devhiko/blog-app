@@ -1,1 +1,19 @@
+/* burası yazılır, önemli değil */
 
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: gray;
+}
+
+a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: whitesmoke;
+}
