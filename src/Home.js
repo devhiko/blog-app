@@ -1,19 +1,33 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
-
-  const [name, setName] = useState('hikmet');
-
-  const handleClick = () => {
-    setName('mehmet');
-  };
+  const [blogs, SetBlogs] = useState([
+    {
+      title: 'hello',
+      content: 'hello blog',
+      author: 'hikmet',
+      id: 1
+    },
+    {
+      title: 'bye',
+      content: 'bye blog',
+      author: 'hikmet',
+      id: 2
+    },
+    {
+      title: 'goodbye',
+      content: 'goodbye blog',
+      author: 'veli',
+      id: 3
+    }
+  ]);
 
   return (
-    <nav className="home">
-      <h2>Home Sweet home !</h2>
-      <button onClick={handleClick}>Click Me</button>
-      <p>Author name is: {name}</p>
-    </nav>
+    <div className="home">
+      <BlogList blogs={blogs} title="All Blogs" />
+      <BlogList blogs={blogs.filter(blog => blog.author === 'hikmet')} title="Hikmet's Blogs" />
+    </div>
   );
 }
 
