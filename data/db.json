@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "hello",
+      "content": "hello blog",
+      "author": "hikmet",
+      "id": 1
+    },
+    {
+      "title": "bye",
+      "content": "bye blog",
+      "author": "mehmet",
+      "id": 2
+    },
+    {
+      "title": "goodbye",
+      "content": "goodbye blog",
+      "author": "hikmet",
+      "id": 3
+    }
+  ]
+}
