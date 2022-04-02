@@ -1,22 +1,16 @@
 {
   "blogs": [
     {
-      "title": "hello",
-      "content": "hello blog",
+      "title": "Aliens, are they real ?",
+      "content": "Some blog content about aliens...",
       "author": "hikmet",
-      "id": 1
+      "id": 5
     },
     {
-      "title": "bye",
-      "content": "bye blog",
-      "author": "mehmet",
-      "id": 2
-    },
-    {
-      "title": "goodbye",
-      "content": "goodbye blog",
+      "title": "Living at other planet (oh sweet home) ?!",
+      "content": "Blog content about living another planet so...",
       "author": "hikmet",
-      "id": 3
+      "id": 6
     }
   ]
 }
