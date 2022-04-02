@@ -6,7 +6,7 @@
 }
 
 body {
-  background: gray;
+  /* background: gray; */
   /*for dark mode*/
   margin: 0;
 }
@@ -36,7 +36,7 @@ a {
   background: azure;
 }
 
-.blog a {
+.blog h3 {
   color: lightskyblue;
   margin: 0;
   display: block;
@@ -46,6 +46,26 @@ a {
 
 .blog p {
   margin: 10px;
+}
+
+.blog-details {
+  margin: 10px;
+}
+
+.blog-details h2 {
+  color: lightskyblue;
+}
+
+.blog-details h3 {
+  color: lightskyblue;
+}
+
+.create {
+  margin: 10px;
+}
+
+.create h2 {
+  color: lightskyblue;
 }
 
 .error {

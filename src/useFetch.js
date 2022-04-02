@@ -7,9 +7,13 @@ const useFetch = (url) => {
   const [isPending, setPending] = useState(true);
   const [error, setError] = useState(null);
 
+  // dont use timeout at real app. only for simulation. use only fetch.
   useEffect(() => {
+
+    const abortCont = new AbortController();
+
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then(res => {
           if (!res.ok) {
             throw Error('Error while fetching data !')
@@ -22,10 +26,19 @@ const useFetch = (url) => {
           setError(null);
         })
         .catch(err => {
-          setPending(false);
-          setError(err.message);
+          if (err.name === 'AbortError') {
+            console.log('Fetch aborted !');
+          } else {
+            setPending(false);
+            setError(err.message);
+          }
         });
-    }, 1000);
+    }, 500);
+
+    // at other routing, pauses the fetch.
+    // actually, there is no need to this for now.
+    return () => abortCont.abort();
+
   }, [url]);
 
   return { data, isPending, error };
