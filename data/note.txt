@@ -1,3 +1,4 @@
 * Works with json server as a db file
-* To start it use prompt: $ npx json-server --watch data/db.json --port 8000 
+// * To start it use prompt: $ npx json-server --watch data/db.json --port 8000 
+* to quick start use $ npm run serve only.
 * for post requests, it adds id automatically.
