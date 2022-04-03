@@ -13,10 +13,10 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route exact path='/' element={<Home />}></Route>
-            <Route exact path='/create' element={<Create />}></Route>
-            <Route exact path='/blogs/:id' element={<BlogDetails />}></Route>
-            <Route path='*' element={<NotFound />}></Route>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/create' element={<Create />} />
+            <Route exact path='/blogs/:id' element={<BlogDetails />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
       </div>
