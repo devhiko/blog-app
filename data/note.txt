@@ -2,3 +2,4 @@
 // * To start it use prompt: $ npx json-server --watch data/db.json --port 8000 
 * to quick start use $ npm run serve only.
 * for post requests, it adds id automatically.
+* Using react-router ^6.xx

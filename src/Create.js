@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('hikmet');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
 
@@ -23,7 +23,7 @@ const Create = () => {
     })
       .then(() => {
         console.log("Added Blog !");
-        history.push('/');
+        navigate('/');
       })
       .catch(err => console.log(err));
   }
@@ -40,7 +40,6 @@ const Create = () => {
           onChange={(e) => setTitle(e.target.value)}
           required
         />
-        <p>Written title: {title}</p>
         <label >Content: </label>
         <textarea
           placeholder="Write some content"
@@ -48,7 +47,6 @@ const Create = () => {
           onChange={(e) => setContent(e.target.value)}
           required
         ></textarea>
-        <p>Written content: {content}</p>
         <label >Author: </label>
         <select
           value={author}
@@ -57,7 +55,6 @@ const Create = () => {
           <option>hikmet</option>
           <option>mehmet</option>
         </select> <br />
-        <p>Selected author: {author}</p>
         <button>Add Blog</button>
       </form>
     </div>
