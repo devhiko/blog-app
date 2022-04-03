@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Navbar from './Navbar';
 import Create from './Create';
@@ -13,9 +13,9 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/create' element={<Create />} />
-            <Route exact path='/blogs/:id' element={<BlogDetails />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/blogs/:id' element={<BlogDetails />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
