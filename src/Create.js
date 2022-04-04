@@ -3,16 +3,28 @@ import { useNavigate } from "react-router-dom";
 
 const Create = () => {
 
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [author, setAuthor] = useState('hikmet');
+  // const [title, setTitle] = useState('');
+  // const [content, setContent] = useState('');
+  // const [author, setAuthor] = useState('hikmet');
+  // refactored to advanced code :)
+  // multiple inputs form (then always that's it.)
+
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (e) => {
+
+    const { target: { name, value } } = e;
+
+    setInputs(val => ({ ...val, [name]: value }));
+  }
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
 
     e.preventDefault();
 
-    const blog = { title, content, author };
+    const blog = { author: 'hikmet', ...inputs };
 
     fetch('http://localhost:8000/blogs', {
       method: 'POST',
@@ -36,21 +48,24 @@ const Create = () => {
         <input
           type="text"
           placeholder="Write some title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+          value={inputs.title}
+          onChange={handleChange}
           required
         />
         <label >Content: </label>
         <textarea
           placeholder="Write some content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          name="content"
+          value={inputs.content}
+          onChange={handleChange}
           required
         ></textarea>
         <label >Author: </label>
         <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          name="author"
+          value={inputs.author}
+          onChange={handleChange}
         >
           <option>hikmet</option>
           <option>mehmet</option>
